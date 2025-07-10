@@ -17,6 +17,7 @@ def serialize_animals(animals_data):
         type_animal = characteristics_animal.get("type", "N/A")
         location_animal = animal.get("locations", "N/A")
         locations = ", ".join(location_animal)
+
         output += '<li class="cards__item">'
         output += f"Name: {name_animal}<br/>\n"
         output += f"Diet: {diet_animal}<br/>\n"
