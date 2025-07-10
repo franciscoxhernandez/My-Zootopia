@@ -15,8 +15,12 @@ def serialize_animals(animals_data):
         characteristics_animal = animal.get("characteristics", {})
         diet_animal = characteristics_animal.get("diet", "N/A")
         type_animal = characteristics_animal.get("type", "N/A")
+        skin_type = characteristics_animal.get("skin", "N/A")
         location_animal = animal.get("locations", "N/A")
         locations = ", ".join(location_animal)
+        diet_animal = characteristics_animal.get("diet", "N/A")
+        weight = characteristics_animal.get("weight", "N/A")
+        length = characteristics_animal.get("length", "N/A")
 
         output += '<li class="cards__item">\n'
         output += f'    <div class="card__title">{name_animal}</div>\n'
@@ -25,6 +29,10 @@ def serialize_animals(animals_data):
         output += f'                <li class="card__list-item"><strong>Diet:</strong> {diet_animal}</li>\n'
         output += f'                <li class="card__list-item"><strong>Location:</strong> {locations}</li>\n'
         output += f'                <li class="card__list-item"><strong>Type:</strong> {type_animal}</li>\n'
+        output += f'                <li class="card__list-item"><strong>Skin Type:</strong> {skin_type}</li>\n'
+        output += f'                <li class="card__list-item"><strong>Diet:</strong> {diet_animal}</li>\n'
+        output += f'                <li class="card__list-item"><strong>Weight:</strong> {weight}</li>\n'
+        output += f'                <li class="card__list-item"><strong>Length:</strong> {length}</li>\n'
         output += '             </ul>\n'
         output += '         </div>\n'
         output += '     </li>\n'
