@@ -8,7 +8,7 @@ with open("animals_template.html", "r") as file:
 with open("animals_data.json", "r") as file:
     animals_data = json.load(file)
 
-output = ""
+output = "" # define an empty string
 for animal in animals_data:
     name_animal = animal.get("name", "N/A")
     characteristics_animal = animal.get("characteristics", {})
@@ -16,11 +16,12 @@ for animal in animals_data:
     type_animal = characteristics_animal.get("type", "N/A")
     location_animal = animal.get("locations", "N/A")
     locations = ", ".join(location_animal)
-
-    output += f"Name: {name_animal}\n"
-    output += f"Diet: {diet_animal}\n"
-    output += f"Location: {locations}\n"
-    output += f"Type: {type_animal}\n\n"
+    output += '<li class="cards__item">'
+    output += f"Name: {name_animal}<br/>\n"
+    output += f"Diet: {diet_animal}<br/>\n"
+    output += f"Location: {locations}<br/>\n"
+    output += f"Type: {type_animal}<br/>\n\n"
+    output += '</li>'
 
 final_html = template.replace("__REPLACE_ANIMALS_INFO__", output)
 
